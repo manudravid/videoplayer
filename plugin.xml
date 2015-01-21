@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.manu.videoplayer"
+    version="1.0.0">
+
+    <engines>
+        <engine name="cordova" version=">=3.2.0" />
+    </engines>
+
+	<name>NewActivity</name>
+	<description>Play video with native support for android</description>
+    <author>Manu Palassery</author>
+    <keywords>video,android</keywords>
+	<license>MIT</license>
+    
+    <js-module src="www/NewActivity.js" name="NewActivity">
+		<clobbers target="NewActivity" />
+	</js-module>
+    
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NewActivity" >
+                <param name="android-package" value="com.dawsonloudon.videoplayer.NewActivity"/>
+            </feature>
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+	   <!-- Below things may not be necessary -->
+	   <source-file src="src/activity_new.xml" target-dir="res/layout"/>
+		<source-file src="src/strings.xml" target-dir="res/values"/>
+	   <source-file src="src/NewActivity.java" target-dir="src/com/manu/videoplayer" />
+		<source-file src="src/VideoActivity.java" target-dir="src/com/manu/videoplayer" />
+		<source-file src="src/FakeR.java" target-dir="src/com/manu/videoplayer" />
+	</platform>   
+</plugin>
