@@ -8,7 +8,6 @@ package com.manu.videoplayer;
 
 import android.os.Bundle;
 import android.app.Activity;
-import com.fingent.video.R;
 import com.manu.videoplayer.FakeR;
 import android.widget.VideoView;
 import android.net.Uri; 
